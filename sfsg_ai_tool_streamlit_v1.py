@@ -117,7 +117,7 @@ def train_model(df):
 # ---------------------------
 # Streamlit App Layout
 # ---------------------------
-def main():
+def app():
    
     st.title("AI Assesement Tool for Forensic Sample Analysis")
             
@@ -132,8 +132,7 @@ def main():
             assess_sample(prepared_data, sample_id)
            
 
-if __name__ == "__main__":
-    main()
+
 
 
 

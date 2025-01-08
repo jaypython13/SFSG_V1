@@ -169,9 +169,9 @@ def main():
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             st.subheader("Assess Sample")
             sample_id = st.text_input("Enter Sample ID for Analysis")
-            df = pd.read_csv("SFSG_Dataset.csv")
+            prepared_data = prepare_data(df)
             if sample_id:
-               assess_sample(sample_id)
+               assess_sample(prepared_data,sample_id)
            
 
 if __name__ == "__main__":

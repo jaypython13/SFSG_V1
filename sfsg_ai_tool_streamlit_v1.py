@@ -15,6 +15,7 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 
 
+
 # ---------------------------
 # Utility Functions
 # ---------------------------
@@ -118,6 +119,16 @@ def train_model(df):
 # ---------------------------
 def main():
     st.title("AI Assesement Tool for Forensic Sample Analysis")
+    st.set_page_config(page_title = "SFSG AI Tool", initial_sidebar_state='expanded')
+
+
+    st.markdown("""
+    <style>
+        [data-testid=stSidebar] {
+            background-color: white;
+        }
+    </style>
+    """, unsafe_allow_html=True)
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
@@ -153,6 +164,12 @@ def main():
         
     if app == "AI Sample Assesement Tool":
             st.subheader("Assess Sample")
+            st.write("### The SFSG AI Tool is a comprehensive and automated solution for forensic sample quality assessment.\
+                        By combining structured decision-making with advanced machine learning techniques, it:\
+                        •	Saves time and improves efficiency in forensic workflows.\
+                        •	Provides accurate, reliable assessments.\
+                        •	Enhances decision-making with clear, actionable insights.\
+                            This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             sample_id = st.text_input("Enter Sample ID for Analysis")
             if sample_id:
                 assess_sample(prepared_data, sample_id)

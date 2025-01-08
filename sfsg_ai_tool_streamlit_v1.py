@@ -143,7 +143,7 @@ def main():
                     "icon": {"color": "white", "font-size": "20px"}, 
                     "menu_title":{"background-color": "#005f66"} ,    
                     "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"1px", "--hover-color": "#001166"},
-                    "nav-link-selected": {"background-color": "#660000"},}
+                    "nav-link-selected": {"background-color": "#42ab1a"},}
             )
         
     if app =="About Us":

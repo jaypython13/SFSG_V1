@@ -127,7 +127,21 @@ def main():
         }
     </style>
     """, unsafe_allow_html=True)
-    
+    st.markdown(
+    """
+    <style>
+    /* Change the background color */
+    body {
+        background-color: #e0f7fa; /* Light Cyan */
+    }
+    /* Optional: Adjust the text color for better contrast */
+    .stMarkdown, .stTextInput, .stButton {
+        color: #004d40; /* Dark Cyan */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")

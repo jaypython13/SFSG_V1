@@ -131,7 +131,7 @@ def main():
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
-            st.image(img, width =250)
+            st.image(img, width =300)
             app = option_menu(
                 menu_title='Main Menu',
                 options=['About Us', "AI Sample Assesement Tool"],

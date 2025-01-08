@@ -136,7 +136,7 @@ def main():
     }
     /* Optional: Adjust the text color for better contrast */
     .stMarkdown, .stTextInput, .stButton {
-        color: #666100; /* Dark Cyan */
+        color: #005f66; /* Dark Cyan */
     }
     </style>
     """,

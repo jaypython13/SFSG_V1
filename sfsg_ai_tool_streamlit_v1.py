@@ -139,7 +139,7 @@ def main():
                 menu_icon='chat-text-fill',
                 default_index=0,
                 styles={
-                    "container": {"padding": "0!important","background-color":'#476600'},
+                    "container": {"padding": "0!important","background-color":'#005f66'},
                     "icon": {"color": "white", "font-size": "20px"}, 
                     "menu_title":{"background-color": "blue"} ,    
                     "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"0px", "--hover-color": "#660000"},

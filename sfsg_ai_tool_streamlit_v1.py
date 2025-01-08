@@ -133,9 +133,9 @@ def main():
         if sample_id:
             assess_sample(prepared_data, sample_id)
 
-            st.subheader("Train Machine Learning Model")
-            if st.button("Train Model"):
-                train_model(prepared_data)
+        #st.subheader("Train Machine Learning Model")
+        #if st.button("Train Model"):
+            #train_model(prepared_data)
 
 if __name__ == "__main__":
     main()

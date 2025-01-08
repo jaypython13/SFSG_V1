@@ -139,10 +139,10 @@ def main():
                 menu_icon='chat-text-fill',
                 default_index=0,
                 styles={
-                    "container": {"padding": "0!important","background-color":'white'},
+                    "container": {"padding": "0!important","background-color":'#001166'},
                     "icon": {"color": "white", "font-size": "20px"}, 
                     "menu_title":{"background-color": "#005f66"} ,    
-                    "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"0px", "--hover-color": "#001166"},
+                    "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"1px", "--hover-color": "#001166"},
                     "nav-link-selected": {"background-color": "#660000"},}
             )
         

@@ -139,7 +139,7 @@ def main():
                 menu_icon='chat-text-fill',
                 default_index=0,
                 styles={
-                    "container": {"padding": "0!important","background-color":'#005f66'},
+                    "container": {"padding": "0!important","background-color":'white'},
                     "icon": {"color": "white", "font-size": "20px"}, 
                     "menu_title":{"background-color": "'#005f66"} ,    
                     "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"0px", "--hover-color": "#660000"},
@@ -178,28 +178,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-#def main():
-    #st.title("AI Assesement Tool for Forensic Sample Analysis")
 
-    #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
-    #if uploaded_file is not None:
-        #df = pd.read_csv("SFSG_Dataset.csv")
-        #st.write("### Uploaded Dataset")
-        #st.write(df.head())
-
-        #st.subheader("Data Preparation")
-        #prepared_data = prepare_data(df)
-        #st.write("### Processed Dataset")
-        #st.write(prepared_data.head())
-
-        #st.subheader("Assess Sample")
-        #sample_id = st.text_input("Enter Sample ID for Analysis")
-        #if sample_id:
-            #assess_sample(prepared_data, sample_id)
-
-        #st.subheader("Train Machine Learning Model")
-        #if st.button("Train Model"):
-            #train_model(prepared_data)
 
 
 

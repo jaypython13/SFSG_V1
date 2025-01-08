@@ -147,7 +147,7 @@ def main():
             )
         
     if app =="About Us":
-            st.sucess("About Science For Social Good CIC")
+            st.title("About Science For Social Good CIC")
             st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
                        It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
                        Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\

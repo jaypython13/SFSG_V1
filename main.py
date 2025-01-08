@@ -171,7 +171,7 @@ def main():
             sample_id = st.text_input("Enter Sample ID for Analysis")
             df = pd.read_csv("SFSG_Dataset.csv")
             if sample_id:
-               assess_sample(prepared_data, sample_id)
+               assess_sample(df, sample_id)
            
 
 if __name__ == "__main__":

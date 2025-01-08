@@ -148,7 +148,7 @@ def main():
         
     if app =="About Us":
             st.title("About Science For Social Good CIC")
-            st.info ("#### \n Vocational training transforms lives and drives economic growth in developing countries.\
+            st.info ("\n Vocational training transforms lives and drives economic growth in developing countries.\
                        It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
                        Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\
                        \n Our direction is genetic analysis testing verticals in Agriculture, Human Identification (Forensic DNA), quality and safety testing (environmental, food and water).\
@@ -165,7 +165,7 @@ def main():
     if app == "AI Sample Assesement Tool":
             st.title("AI Assesement Tool for Forensic Sample Analysis")
             
-            st.info("### \n The AI-powered Assesement Tool is a comprehensive and automated solution for forensic sample quality assessment.\
+            st.info(" \n The AI-powered Assesement Tool is a comprehensive and automated solution for forensic sample quality assessment.\
                         By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")

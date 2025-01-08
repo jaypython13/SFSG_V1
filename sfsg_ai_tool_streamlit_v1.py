@@ -114,7 +114,7 @@ def train_model(df):
 # Streamlit App Layout
 # ---------------------------
 def main():
-    st.title("SFSG AI Tool for Forensic Sample Analysis")
+        st.title("SFSG AI Tool for Forensic Sample Analysis")
 
     #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
     #uploaded_file = st.file_uploader("Upload CSV File", type="csv")

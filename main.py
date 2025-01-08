@@ -174,5 +174,5 @@ def main():
                 assess_sample(prepared_data, sample_id)
            
 
-#if __name__ == "__main__":
-   # main()
+if __name__ == "__main__":
+    main()

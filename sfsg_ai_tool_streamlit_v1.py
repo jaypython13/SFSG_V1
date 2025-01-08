@@ -118,10 +118,8 @@ def train_model(df):
 # Streamlit App Layout
 # ---------------------------
 def main():
-    st.title("AI Assesement Tool for Forensic Sample Analysis")
+   
     st.set_page_config(page_title = "SFSG AI Tool", initial_sidebar_state='expanded')
-
-
     st.markdown("""
     <style>
         [data-testid=stSidebar] {
@@ -129,6 +127,7 @@ def main():
         }
     </style>
     """, unsafe_allow_html=True)
+    st.title("AI Assesement Tool for Forensic Sample Analysis")
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
@@ -148,6 +147,7 @@ def main():
             )
         
     if app =="About Us":
+            st.sucess("About Science For Social Good CIC")
             st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
                        It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
                        Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\

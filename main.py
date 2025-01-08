@@ -72,7 +72,7 @@ def main():
             st.link_button("\n Click here to view more information", "https://ssg-cic.org/", type = "primary")
         
     if app == "AI Sample Assesement Tool":
-            sfsg_ai_tool_streamlit_v1.app()
+            aitool.app()
            
 
 if __name__ == "__main__":

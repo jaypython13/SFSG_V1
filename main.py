@@ -81,6 +81,8 @@ def assess_sample(df, sample_id):
     else:
         degradation_index = sample_data['Degradation_Index'].iloc[0]
         #st.write(f"Sample ID: {sample_id}")
+        st.info(" #### This AI-powered tool calculates the Degradation Index by analyzing the ratio of specific target quantities in forensic samples, providing a quantitative measure of sample quality.\
+        The implemented AI model leverages the calculated Degradation Index to classify samples into categories not degraded, Degraded, or Significant Degradation ensuring reliable assessment and actionable insights for forensic analysis.")
         st.write(f" ##### Degradation Index of the Sample ID {sample_id} is {degradation_index}")
 
         if degradation_index < 1:

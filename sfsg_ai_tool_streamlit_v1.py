@@ -116,17 +116,17 @@ def train_model(df):
 def main():
     st.title("SFSG AI Tool for Forensic Sample Analysis")
 
-    uploaded_file = st.file_uploader("Upload CSV File", type="csv")
-
-    if uploaded_file is not None:
-        df = pd.read_csv(uploaded_file)
-        st.write("### Uploaded Dataset")
-        st.write(df.head())
+    #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
+    #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
+    #if uploaded_file is not None:
+        df = pd.read_csv("SFSG_Dataset.csv")
+        #st.write("### Uploaded Dataset")
+        #st.write(df.head())
 
         st.subheader("Data Preparation")
         prepared_data = prepare_data(df)
-        st.write("### Processed Dataset")
-        st.write(prepared_data.head())
+        #st.write("### Processed Dataset")
+        #st.write(prepared_data.head())
 
         st.subheader("Assess Sample")
         sample_id = st.text_input("Enter Sample ID for Analysis")

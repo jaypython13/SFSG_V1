@@ -171,7 +171,7 @@ def main():
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             st.subheader("🔍 Assess Sample")
-            sample_id = st.text_input("Enter Sample ID for AI Analysis")
+            sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
             prepared_data = prepare_data(df)
             if sample_id:
                assess_sample(prepared_data,sample_id)

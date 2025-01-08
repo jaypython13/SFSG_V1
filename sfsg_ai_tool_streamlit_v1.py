@@ -120,28 +120,14 @@ def train_model(df):
 def main():
    
     st.set_page_config(page_title = "SFSG AI Tool", initial_sidebar_state='expanded', layout="wide")
-    #st.markdown("""
-    #<style>
-        #[data-testid=stSidebar] {
-           # background-color: white;
-        #}
-    #</style>
-    #""", unsafe_allow_html=True)
-    st.markdown(
-    """
+    st.markdown("""
     <style>
-    /* Change the background color */
-    body {
-        background-color: #e0f7fa; /* Light Cyan */
-    }
-    /* Optional: Adjust the text color for better contrast */
-    .stMarkdown, .stTextInput, .stButton {
-        color: #005f66; /* Dark Cyan */
-    }
+        [data-testid=stSidebar] {
+            background-color: white;
+        }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+    """, unsafe_allow_html=True)
+
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")

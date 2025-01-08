@@ -171,7 +171,7 @@ def main():
             sample_id = st.text_input("Enter Sample ID for Analysis")
             df = pd.read_csv("SFSG_Dataset.csv")
             if sample_id:
-                 sample_data = df[df['Sample_ID'] == sample_id]
+                sample_data = df[df['Sample_ID'] == sample_id]
 
                 if sample_data.empty:
                     st.error(f"Sample ID '{sample_id}' not found in the dataset.")

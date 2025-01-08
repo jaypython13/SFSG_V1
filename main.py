@@ -161,7 +161,7 @@ def main():
                             \n 3. Volunteer and Work with us\
                             \n 4. Donate used laboratory equipment, IT Gear and Software")
 
-            st.link_button("\n Click here to view more information", "https://ssg-cic.org/", type = "primary")
+            st.link_button("\n Click here to view our website", "https://ssg-cic.org/", type = "primary")
         
     if app == "AI Sample Assesement Tool":
             st.title("🤖AI Assesement Tool for Forensic Sample Analysis")

@@ -126,7 +126,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    
+    df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
             st.image(img, width =300)
@@ -169,24 +169,9 @@ def main():
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             st.subheader("Assess Sample")
             sample_id = st.text_input("Enter Sample ID for Analysis")
-            df = pd.read_csv("SFSG_Dataset.csv")
+           
             if sample_id:
-                sample_data = df[df['Sample_ID'] == sample_id]
-
-                if sample_data.empty:
-                    st.error(f"Sample ID '{sample_id}' not found in the dataset.")
-                else:
-                    degradation_index = sample_data['Degradation_Index'].iloc[0]
-                    st.write(f"Sample ID: {sample_id}")
-                    st.write(f"Degradation Index: {degradation_index}")
-
-                if degradation_index < 1:
-                    st.success("The sample is not degraded and is ready for further analysis.")
-                elif 1 <= degradation_index < 10:
-                    st.warning("The sample is degraded. No action needed.")
-                else:
-                    st.error("The sample is significantly degraded. Resample is required.")
-               #assess_sample(prepared_data, sample_id)
+               assess_sample(prepared_data, sample_id)
            
 
 if __name__ == "__main__":

@@ -133,7 +133,7 @@ def main():
                     "nav-link-selected": {"background-color": "green"},}
             )
         
-        if app =="About Us":
+    if app =="About Us":
            st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
            It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
            Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\
@@ -148,7 +148,7 @@ def main():
 
             st.link_button("Click here to view more information", "https://www.rippleandco.com/about-us", type = "primary")
         
-        if app == "AI Sample Assesement Tool":
+    if app == "AI Sample Assesement Tool":
             st.subheader("Assess Sample")
             sample_id = st.text_input("Enter Sample ID for Analysis")
             if sample_id:

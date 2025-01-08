@@ -84,11 +84,11 @@ def assess_sample(df, sample_id):
         st.write(f"Degradation Index: {degradation_index}")
 
         if degradation_index < 1:
-            st.success("## AI Assesement : The sample is not degraded and is ready for further analysis.")
+            st.success("##### AI Assesement : The sample is not degraded and is ready for further analysis.")
         elif 1 <= degradation_index < 10:
-            st.warning("## AI Assesement : The sample is degraded. No action needed.")
+            st.warning("##### AI Assesement : The sample is degraded. No action needed.")
         else:
-            st.error("## AI Assesement : The sample is significantly degraded. Resample is required.")
+            st.error("##### AI Assesement : The sample is significantly degraded. Resample is required.")
 
 # ---------------------------
 # Machine Learning Model

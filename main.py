@@ -81,7 +81,7 @@ def assess_sample(df, sample_id):
     else:
         degradation_index = sample_data['Degradation_Index'].iloc[0]
         #st.write(f"Sample ID: {sample_id}")
-        st.write(f"#Degradation Index of the Sample ID {sample_id} is {degradation_index}")
+        st.write(f" # Degradation Index of the Sample ID {sample_id} is {degradation_index}")
 
         if degradation_index < 1:
             st.success("##### AI Assesement : The sample is not degraded and is ready for further analysis.")

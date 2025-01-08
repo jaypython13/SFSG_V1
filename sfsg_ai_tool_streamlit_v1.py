@@ -155,21 +155,19 @@ def main():
                        To achieve this goal, SSG-CIC aims to establish Vocational Training Hubs (VTHs) across the globe and build local capacity for training and development.\
                        All of this is possible with your support and volunteering.  How you can support us?\
                        Our fundraising is through 4 main routes:\
-                            1. Non Profit Consulting\
-                            2. Crowdfunding\
-                            3. Volunteer and Work with us\
-                            4. Donate used laboratory equipment, IT Gear and Software")
+                           \n 1. Non Profit Consulting\
+                            \n 2. Crowdfunding\
+                            \n 3. Volunteer and Work with us\
+                            \n 4. Donate used laboratory equipment, IT Gear and Software")
 
             st.link_button("Click here to view more information", "https://www.rippleandco.com/about-us", type = "primary")
         
     if app == "AI Sample Assesement Tool":
             st.title("AI Assesement Tool for Forensic Sample Analysis")
             
-            st.info("### The SFSG AI Tool is a comprehensive and automated solution for forensic sample quality assessment.\
-                        By combining structured decision-making with advanced machine learning techniques, it:\
-                        •	Saves time and improves efficiency in forensic workflows.\
-                        •	Provides accurate, reliable assessments.\
-                        •	Enhances decision-making with clear, actionable insights.\
+            st.info("### The AI-powered Assesement Tool is a comprehensive and automated solution for forensic sample quality assessment.\
+                        By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
+                        It also Enhances decision-making with clear, actionable insights.\
                             This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             st.subheader("Assess Sample")
             sample_id = st.text_input("Enter Sample ID for Analysis")

@@ -133,7 +133,7 @@ def main():
             img = Image.open( "SFSG_Logo.png")
             st.image(img, width =300)
             app = option_menu(
-                menu_title='Main Menu',
+                #menu_title='Main Menu',
                 options=['About Us', "AI Sample Assesement Tool"],
                 icons=['house-fill','person-circle'],
                 menu_icon='chat-text-fill',

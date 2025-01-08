@@ -134,17 +134,17 @@ def main():
             )
         
     if app =="About Us":
-           st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
-           It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
-           Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\
-           Our direction is genetic analysis testing verticals in Agriculture, Human Identification (Forensic DNA), quality and safety testing (environmental, food and water).\
-            To achieve this goal, SSG-CIC aims to establish Vocational Training Hubs (VTHs) across the globe and build local capacity for training and development.\
-            All of this is possible with your support and volunteering.  How you can support us?\
-            Our fundraising is through 4 main routes:\
-                1. Non Profit Consulting\
-                2. Crowdfunding\
-                3. Volunteer and Work with us\
-                4. Donate used laboratory equipment, IT Gear and Software")
+            st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
+                       It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
+                       Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\
+                       Our direction is genetic analysis testing verticals in Agriculture, Human Identification (Forensic DNA), quality and safety testing (environmental, food and water).\
+                       To achieve this goal, SSG-CIC aims to establish Vocational Training Hubs (VTHs) across the globe and build local capacity for training and development.\
+                       All of this is possible with your support and volunteering.  How you can support us?\
+                       Our fundraising is through 4 main routes:\
+                            1. Non Profit Consulting\
+                            2. Crowdfunding\
+                            3. Volunteer and Work with us\
+                            4. Donate used laboratory equipment, IT Gear and Software")
 
             st.link_button("Click here to view more information", "https://www.rippleandco.com/about-us", type = "primary")
         

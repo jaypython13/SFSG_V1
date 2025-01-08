@@ -151,16 +151,16 @@ def main():
             st.info ("#### Vocational training transforms lives and drives economic growth in developing countries.\
                        It equips individuals with the practical skills and knowledge needed to secure employment, start businesses, and contribute to their community’s development.\
                        Through our work, we constantly explore the significance of vocational training in developing countries and its positive impact on individuals, communities, and overall socio-economic progress.\
-                       Our direction is genetic analysis testing verticals in Agriculture, Human Identification (Forensic DNA), quality and safety testing (environmental, food and water).\
+                       \n Our direction is genetic analysis testing verticals in Agriculture, Human Identification (Forensic DNA), quality and safety testing (environmental, food and water).\
                        To achieve this goal, SSG-CIC aims to establish Vocational Training Hubs (VTHs) across the globe and build local capacity for training and development.\
-                       All of this is possible with your support and volunteering.  How you can support us?\
-                       Our fundraising is through 4 main routes:\
+                       All of this is possible with your support and volunteering.  \n How you can support us?\
+                       \n Our fundraising is through 4 main routes:\
                            \n 1. Non Profit Consulting\
                             \n 2. Crowdfunding\
                             \n 3. Volunteer and Work with us\
                             \n 4. Donate used laboratory equipment, IT Gear and Software")
 
-            st.link_button("Click here to view more information", "https://www.rippleandco.com/about-us", type = "primary")
+            st.link_button("\n Click here to view more information", "https://ssg-cic.org/", type = "primary")
         
     if app == "AI Sample Assesement Tool":
             st.title("AI Assesement Tool for Forensic Sample Analysis")
@@ -168,7 +168,7 @@ def main():
             st.info("### The AI-powered Assesement Tool is a comprehensive and automated solution for forensic sample quality assessment.\
                         By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
                         It also Enhances decision-making with clear, actionable insights.\
-                            This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
+                        This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             st.subheader("Assess Sample")
             sample_id = st.text_input("Enter Sample ID for Analysis")
             if sample_id:

@@ -80,8 +80,8 @@ def assess_sample(df, sample_id):
         st.error(f"Sample ID '{sample_id}' not found in the dataset.")
     else:
         degradation_index = sample_data['Degradation_Index'].iloc[0]
-        st.write(f"Sample ID: {sample_id}")
-        st.write(f"Degradation Index: {degradation_index}")
+        #st.write(f"Sample ID: {sample_id}")
+        st.write(f"Degradation Index of the {sample_id} calculated by AI is {degradation_index}")
 
         if degradation_index < 1:
             st.success("##### AI Assesement : The sample is not degraded and is ready for further analysis.")

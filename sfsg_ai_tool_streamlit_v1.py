@@ -142,7 +142,7 @@ def main():
                     "container": {"padding": "0!important","background-color":'green'},
                     "icon": {"color": "white", "font-size": "20px"}, 
                     "menu_title":{"background-color": "white"} ,    
-                    "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"1px", "--hover-color": "#ADD8E6"},
+                    "nav-link": {"color":"white","font-size": "20px", "text-align": "center", "margin":"1px", "--hover-color": "#FF474D"},
                     "nav-link-selected": {"background-color": "green"},}
             )
         

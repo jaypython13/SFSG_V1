@@ -114,16 +114,15 @@ def train_model(df):
 # Streamlit App Layout
 # ---------------------------
 def main():
-        st.title("SFSG AI Tool for Forensic Sample Analysis")
+        st.title("AI Assesement Tool for Forensic Sample Analysis")
 
-    #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
     #uploaded_file = st.file_uploader("Upload CSV File", type="csv")
     #if uploaded_file is not None:
         df = pd.read_csv("SFSG_Dataset.csv")
         #st.write("### Uploaded Dataset")
         #st.write(df.head())
 
-        st.subheader("Data Preparation")
+        #st.subheader("Data Preparation")
         prepared_data = prepare_data(df)
         #st.write("### Processed Dataset")
         #st.write(prepared_data.head())

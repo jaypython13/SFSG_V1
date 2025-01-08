@@ -127,7 +127,7 @@ def main():
         }
     </style>
     """, unsafe_allow_html=True)
-    st.title("AI Assesement Tool for Forensic Sample Analysis")
+    
     df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
@@ -163,6 +163,7 @@ def main():
             st.link_button("Click here to view more information", "https://www.rippleandco.com/about-us", type = "primary")
         
     if app == "AI Sample Assesement Tool":
+            st.title("AI Assesement Tool for Forensic Sample Analysis")
             st.subheader("Assess Sample")
             st.write("### The SFSG AI Tool is a comprehensive and automated solution for forensic sample quality assessment.\
                         By combining structured decision-making with advanced machine learning techniques, it:\

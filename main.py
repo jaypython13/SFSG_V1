@@ -129,7 +129,7 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
-    df = pd.read_csv("SFSG_Dataset.csv")
+    #df = pd.read_csv("SFSG_Dataset.csv")
     with st.sidebar:   
             img = Image.open( "SFSG_Logo.png")
             st.image(img, width =300)
@@ -170,6 +170,13 @@ def main():
                         By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
+             uploaded_file = st.file_uploader("Upload CSV File", type="csv")
+
+            if uploaded_file is not None:
+                df = pd.read_csv(uploaded_file)
+                st.write("### Data is uploaded Suceessfully")
+                st.write(df.head())
+
             st.subheader("🔍 Assess Sample")
             sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
             prepared_data = prepare_data(df)

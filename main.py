@@ -174,7 +174,7 @@ def main():
 
             if uploaded_file is not None:
                 df = pd.read_csv(uploaded_file)
-                st.write("### Data is uploaded Suceessfully")
+                st.write("### The Sample Data is uploaded Suceessfully")
                 st.write(df.head())
 
             st.subheader("🔍 Assess Sample")

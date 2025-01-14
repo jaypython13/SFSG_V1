@@ -171,7 +171,7 @@ def main():
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
             template_file = pd.read_csv("SFSG_Dataset.csv")
-            st.download_button( label="Download dataset templates as CSV here",
+            st.download_button(label="Download dataset templates as CSV here",
                                     data=template_file,
                                     file_name="Dataset_Template.csv",
                                     mime="text/csv",

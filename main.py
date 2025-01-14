@@ -177,7 +177,7 @@ def main():
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
                 st.subheader("🔍 Assess Sample")
-                sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
+                sample_id = st.text_input(" ##### Enter Sample ID")
                 prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)

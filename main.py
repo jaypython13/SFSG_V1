@@ -176,7 +176,6 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
-
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
                 prepared_data = prepare_data(df)

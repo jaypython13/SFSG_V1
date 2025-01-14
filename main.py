@@ -174,8 +174,8 @@ def main():
 
             if uploaded_file is not None:
                 st.download_button( label="Download dataset templates as CSV here",
-                                    data=csv,
-                                    file_name="SFSG_Dataset.csv",
+                                    data=pd.read_csv("SFSG_Dataset.csv"),
+                                    file_name="Dataset_Template.csv",
                                     mime="text/csv",
                                     )
                      

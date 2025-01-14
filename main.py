@@ -170,7 +170,7 @@ def main():
                         By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
-            template_file = pd.read_csv("SFSG_Dataset.csv"(
+            template_file = pd.read_csv("SFSG_Dataset.csv")
             st.download_button( label="Download dataset templates as CSV here",
                                     data=template_file,
                                     file_name="Dataset_Template.csv",

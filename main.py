@@ -82,7 +82,7 @@ def assess_sample(df, sample_id):
         degradation_index = sample_data['Degradation_Index'].iloc[0]
         #st.write(f"Sample ID: {sample_id}")
         st.info(f" ##### The Degradation Index of the Sample ID {sample_id} is {degradation_index}")
-        st.write(" ##### This AI-powered tool calculates the Degradation Index by analyzing the ratio of specific target quantities in forensic samples, providing a quantitative measure of sample quality.\
+        st.write(" ##### This Assesement tool calculates the Degradation Index by analyzing the ratio of specific target quantities in forensic samples, providing a quantitative measure of sample quality.\
         The implemented AI model leverages the calculated Degradation Index to classify samples into categories not degraded, Degraded, or Significant Degradation ensuring reliable assessment and actionable insights for forensic analysis.")
         
 
@@ -177,7 +177,7 @@ def main():
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
                 st.subheader("🔍 Assess Sample")
-                sample_id = st.text_input(" ##### Enter the Sample ID")
+                sample_id = st.text_input(" ##### Enter the Sample ID here")
                 prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)

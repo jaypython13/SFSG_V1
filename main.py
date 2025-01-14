@@ -170,14 +170,15 @@ def main():
                         By combining structured decision-making with advanced machine learning techniques, it Saves time and improves efficiency in forensic workflows, provides accurate, reliable assessments.\
                         It also Enhances decision-making with clear, actionable insights.\
                         This tool is an invaluable asset for forensic labs, ensuring quality control and minimizing errors in sample analysis")
-            uploaded_file = st.file_uploader(" Upload the sample dataset here in CSV Format", type="csv")
-
-            if uploaded_file is not None:
-                st.download_button( label="Download dataset templates as CSV here",
+            st.download_button( label="Download dataset templates as CSV here",
                                     data=pd.read_csv("SFSG_Dataset.csv"),
                                     file_name="Dataset_Template.csv",
                                     mime="text/csv",
                                     )
+            uploaded_file = st.file_uploader(" Upload the sample dataset here in CSV Format", type="csv")
+
+            if uploaded_file is not None:
+                
                      
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")

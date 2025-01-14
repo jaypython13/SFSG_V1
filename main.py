@@ -175,9 +175,9 @@ def main():
             if uploaded_file is not None:
                 with open(file_name, "rb") as template_file:
                     template_byte = template_file.read()
-                     st.download_button(label="Click to Download Template File",
+                    st.download_button(label="Click to Download Template File",
                         data=template_byte,
-                        file_name="template.xlsx",
+                        file_name="SFSG_Dataset.csv",
                         mime='application/octet-stream')
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")

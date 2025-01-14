@@ -173,12 +173,12 @@ def main():
             uploaded_file = st.file_uploader(" Upload the sample dataset here in CSV Format", type="csv")
 
             if uploaded_file is not None:
-                with open(file_name, "rb") as template_file:
-                    template_byte = template_file.read()
-                    st.download_button(label="Click to Download Template File",
-                        data=template_byte,
-                        file_name="SFSG_Dataset.csv")
-                        #mime='application/octet-stream')
+                st.download_button( label="Download dataset templates as CSV here",
+                                    data=csv,
+                                    file_name="SFSG_Dataset.csv",
+                                    mime="text/csv",
+                                    )
+                     
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())

@@ -177,8 +177,8 @@ def main():
                     template_byte = template_file.read()
                     st.download_button(label="Click to Download Template File",
                         data=template_byte,
-                        file_name="SFSG_Dataset.csv",
-                        mime='application/octet-stream')
+                        file_name="SFSG_Dataset.csv")
+                        #mime='application/octet-stream')
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())

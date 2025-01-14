@@ -174,14 +174,14 @@ def main():
 
             if uploaded_file is not None:
                 df = pd.read_csv(uploaded_file)
-                st.write("### The Sample Data is uploaded Suceessfully")
+                st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
 
-            st.subheader("🔍 Assess Sample")
-            sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
-            prepared_data = prepare_data(df)
-            if sample_id:
-               assess_sample(prepared_data,sample_id)
+                st.subheader("🔍 Assess Sample")
+                sample_id = st.text_input(" ##### Enter Sample ID for AI Analysis")
+                prepared_data = prepare_data(df)
+                if sample_id:
+                   assess_sample(prepared_data,sample_id)
            
 
 if __name__ == "__main__":

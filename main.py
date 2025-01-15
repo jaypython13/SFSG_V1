@@ -342,7 +342,7 @@ def main():
                 st.subheader("Train the AI Model with the uploaded dataset")
                 if st.button("Train Model"):
                   train_model(prepared_data)
-                #st.subheader("Calculate M:F Ratio")
+                st.subheader("Calculate M:F Ratio")
                 df_with_ratio = calculate_mf_ratio(df)
                 if st.button ("Calculate M:F Ratio for the uploaded dataset"):
                     st.write("### Dataset with M:F Ratio")

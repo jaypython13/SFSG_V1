@@ -72,8 +72,8 @@ def prepare_data(df):
     # Log problematic rows for debugging
     invalid_rows = merged_df[merged_df.isnull().any(axis=1)]
     if not invalid_rows.empty:
-        st.write("### Invalid Rows:")
-        st.write(invalid_rows)
+        #st.write("### Invalid Rows:")
+        #st.write(invalid_rows)
 
     # Drop rows with NaN values
     merged_df = merged_df.dropna()

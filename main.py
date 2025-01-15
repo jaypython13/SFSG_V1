@@ -276,7 +276,7 @@ def main():
                   train_model(prepared_data)
                 st.subheader("Calculate M:F Ratio")
                 df_with_ratio = calculate_mf_ratio(df)
-                if st.button ("Calculate M:F Ratio for the uploaded dataset")
+                if st.button ("Calculate M:F Ratio for the uploaded dataset"):
                     st.write("### Dataset with M:F Ratio")
                     st.write(df_with_ratio.head())
                     download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio")    

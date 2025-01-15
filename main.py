@@ -169,24 +169,24 @@ def prepare_data(df):
 # ---------------------------
 # Data Preparation
 # ---------------------------
-"""def prepare_data(df):
+#def prepare_data(df):
     #Prepare dataset by cleaning and calculating the degradation index.
-    df.columns = df.columns.str.strip()
+    #df.columns = df.columns.str.strip()
 
-    required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
-    check_columns(df, required_columns)
+    #required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
+    #check_columns(df, required_columns)
 
-    autosom_1 = df[df['Target_Name'] == 'Autosom 1'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_1'})
-    autosom_2 = df[df['Target_Name'] == 'Autosom 2'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_2'})
+    #autosom_1 = df[df['Target_Name'] == 'Autosom 1'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_1'})
+    #autosom_2 = df[df['Target_Name'] == 'Autosom 2'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_2'})
 
-    merged_df = pd.merge(autosom_1, autosom_2, on='Sample_ID', how='inner')
-    merged_df['Quantity_Autosom_1'] = pd.to_numeric(merged_df['Quantity_Autosom_1'], errors='coerce')
-    merged_df['Quantity_Autosom_2'] = pd.to_numeric(merged_df['Quantity_Autosom_2'], errors='coerce')
+    #merged_df = pd.merge(autosom_1, autosom_2, on='Sample_ID', how='inner')
+    #merged_df['Quantity_Autosom_1'] = pd.to_numeric(merged_df['Quantity_Autosom_1'], errors='coerce')
+    #merged_df['Quantity_Autosom_2'] = pd.to_numeric(merged_df['Quantity_Autosom_2'], errors='coerce')
 
-    merged_df['Degradation_Index'] = merged_df['Quantity_Autosom_2'] / merged_df['Quantity_Autosom_1']
-    merged_df = merged_df.drop_duplicates(subset='Sample_ID', keep='first')
+    #merged_df['Degradation_Index'] = merged_df['Quantity_Autosom_2'] / merged_df['Quantity_Autosom_1']
+    #merged_df = merged_df.drop_duplicates(subset='Sample_ID', keep='first')
 
-    return merged_df"""
+    #return merged_df"""
 
 # -----------------------
 # Decision Making
@@ -241,7 +241,7 @@ def train_model(df):
     st.text(classification_report(y_test, y_pred))
     st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
 
-"""def train_model(df):
+#def train_model(df):
     #Train and evaluate a RandomForestClassifier.
     #df['Degradation_Status'] = df['Degradation_Index'].apply(classify_degradation)
     #status_mapping = {"Ready": 0, "Degraded": 1, "Significant Degradation": 2}
@@ -259,7 +259,7 @@ def train_model(df):
 
     #st.write("### Model Evaluation")
     #st.text(classification_report(y_test, y_pred))
-   # st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}") """
+   # st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}") 
 
 
 # ---------------------------
@@ -324,6 +324,7 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
+                
                 df_with_ratio = calculate_mf_ratio(df)
                 if st.button ("Calculate M:F Ratio for the uploaded dataset"):
                     st.write("### Dataset with M:F Ratio")

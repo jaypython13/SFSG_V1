@@ -45,15 +45,52 @@ def classify_degradation(index):
         return "Degraded"
     else:
         return "Significant Degradation"
-
-# ---------------------------
-# Data Preparation
-# ---------------------------
 def prepare_data(df):
     """Prepare dataset by cleaning and calculating the degradation index."""
     df.columns = df.columns.str.strip()
 
     required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
+    check_columns(df, required_columns)
+
+    # Filter Autosom 1 and Autosom 2 data
+    autosom_1 = df[df['Target_Name'] == 'Autosom 1'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_1'})
+    autosom_2 = df[df['Target_Name'] == 'Autosom 2'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_2'})
+
+    # Merge datasets on Sample_ID
+    merged_df = pd.merge(autosom_1, autosom_2, on='Sample_ID', how='inner')
+
+    # Convert quantities to numeric and handle errors
+    merged_df['Quantity_Autosom_1'] = pd.to_numeric(merged_df['Quantity_Autosom_1'], errors='coerce')
+    merged_df['Quantity_Autosom_2'] = pd.to_numeric(merged_df['Quantity_Autosom_2'], errors='coerce')
+
+    # Calculate the Degradation Index
+    merged_df['Degradation_Index'] = merged_df['Quantity_Autosom_2'] / merged_df['Quantity_Autosom_1']
+
+    # Replace inf/-inf with NaN
+    merged_df = merged_df.replace([np.inf, -np.inf], np.nan)
+
+    # Log problematic rows for debugging
+    invalid_rows = merged_df[merged_df.isnull().any(axis=1)]
+    if not invalid_rows.empty:
+        st.write("### Invalid Rows:")
+        st.write(invalid_rows)
+
+    # Drop rows with NaN values
+    merged_df = merged_df.dropna()
+
+    # Drop duplicate entries based on Sample_ID
+    merged_df = merged_df.drop_duplicates(subset='Sample_ID', keep='first')
+
+    return merged_df
+
+# ---------------------------
+# Data Preparation
+# ---------------------------
+#def prepare_data(df):
+    #"""Prepare dataset by cleaning and calculating the degradation index."""
+    #df.columns = df.columns.str.strip()
+
+    """required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
     check_columns(df, required_columns)
 
     autosom_1 = df[df['Target_Name'] == 'Autosom 1'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_1'})
@@ -66,7 +103,7 @@ def prepare_data(df):
     merged_df['Degradation_Index'] = merged_df['Quantity_Autosom_2'] / merged_df['Quantity_Autosom_1']
     merged_df = merged_df.drop_duplicates(subset='Sample_ID', keep='first')
 
-    return merged_df
+    return merged_df"""
 
 # -----------------------
 # Decision Making

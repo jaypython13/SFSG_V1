@@ -14,7 +14,10 @@ from sklearn.metrics import classification_report, accuracy_score
 from PIL import Image
 from streamlit_option_menu import option_menu
 
-
+# ---------------------------
+# Set Page Configuration
+# ---------------------------
+st.set_page_config(page_title="SFSG AI Tool", layout="wide")
 # ---------------------------
 # Utility Functions
 # ---------------------------
@@ -205,7 +208,7 @@ def train_model(df):
 # ---------------------------
 def main():
    
-    st.set_page_config(page_title = "SFSG AI Tool", layout="wide")
+    #st.set_page_config(page_title = "SFSG AI Tool", layout="wide")
     st.markdown("""
     <style>
         [data-testid=stSidebar] {

@@ -23,15 +23,51 @@ st.set_page_config(page_title="SFSG AI Tool", layout="wide")
 # ---------------------------
 def calculate_mf_ratio(df):
     """Calculates the M:F ratio for the dataset."""
-    df['M:F Ratio'] = df['Quantity'] / (df['Quantity'].mean())
-    return df
+    # Assuming 'df' is your input DataFrame
+    # Convert 'Quantity' columns to numeric, coercing errors to NaN
+    df['Quantity'] = pd.to_numeric(df['Quantity'], errors='coerce')
+
+    # Ensure 'Sample_ID' and 'Target_Name' columns are strings (if required)
+    df['Sample_ID'] = df['Sample_ID'].astype(str)
+    df['Target_Name'] = df['Target_Name'].astype(str)
+
+    # Extract rows for 'Male' and 'Autosom 2' based on 'Target_Name'
+    male_data = df[df['Target_Name'] == 'Male']
+    autosom2_data = df[df['Target_Name'] == 'Autosom 2']
+
+    # Merge male and autosom2 data on 'Sample_ID' to align them correctly
+    merged_data = pd.merge(male_data, autosom2_data, on='Sample_ID', suffixes=('_male', '_autosom2'))
+
+    # Calculate the components for the M:F ratio
+    # Ensure the merged columns 'Quantity_male' and 'Quantity_autosom2' are numeric
+    merged_data['Quantity_male'] = pd.to_numeric(merged_data['Quantity_male'], errors='coerce')
+    merged_data['Quantity_autosom2'] = pd.to_numeric(merged_data['Quantity_autosom2'], errors='coerce')
+
+    # Numerator formula
+    numerator = merged_data['Quantity_male'] / merged_data['Quantity_male']
+    # Denominator formula
+    denominator = (merged_data['Quantity_autosom2'] - merged_data['Quantity_male']) / merged_data['Quantity_male']
+
+    # Handle cases where denominator might be zero or numerator has NaN
+    denominator = denominator.replace(0, float('nan'))
+
+    # Format M:F Ratio as "A : B"
+    merged_data['M:F_Ratio'] = numerator.fillna(0).astype(int).astype(str) + " : " + denominator.fillna(0).round(2).astype(str)
+
+    # Display the output
+    #print(merged_data[['Sample_ID', 'M:F_Ratio']])
+    final_data = merged_data[['Sample_ID', 'M:F_Ratio']]
+    # Optional: Save the result to a CSV file
+    final_data.to_csv('output_with_MF_Ratio.csv', index=False)
+    #df['M:F Ratio'] = df['Quantity'] / (df['Quantity'].mean())
+    return final_data
 
 def download_button(df, filename, label):
     """Creates a download button for a DataFrame."""
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button(
         label=label,
-        data=csv,
+        data=final_data,
         file_name=filename,
         mime='text/csv'
     )

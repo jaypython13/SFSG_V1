@@ -326,21 +326,22 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
-                if st.button ("Calculate M:F Ratio for the uploaded dataset"):
-                    df_with_ratio = calculate_mf_ratio(df)
-                    st.write("### Dataset with M:F Ratio")
-                    st.write(df_with_ratio.head())
-                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio")  
+                 
                 
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter the Sample ID here")
                 prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)
-                st.subheader("Train the AI Model with the uploaded dataset")
+                st.subheader("Click the below button to train the AI Model with the uploaded dataset")
                 if st.button("Train Model"):
                   train_model(prepared_data)
-                #st.subheader("Calculate M:F Ratio")
+                st.subheader("Calculate M:F Ratio")
+                if st.button ("Calculate M:F Ratio for the uploaded dataset"):
+                    df_with_ratio = calculate_mf_ratio(df)
+                    st.write("### Dataset with M:F Ratio")
+                    st.write(df_with_ratio.head())
+                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio") 
                 
           
                   

@@ -182,8 +182,8 @@ def main():
                 prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)
-               st.subheader("Train Machine Learning Model")
-               if st.button("Train Model"):
+                st.subheader("Train Machine Learning Model")
+                if st.button("Train Model"):
                   train_model(prepared_data)
 
 

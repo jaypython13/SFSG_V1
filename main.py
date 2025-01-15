@@ -67,7 +67,7 @@ def download_button(df, filename, label):
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button(
         label=label,
-        data=final_data,
+        data=csv,
         file_name=filename,
         mime='text/csv'
     )

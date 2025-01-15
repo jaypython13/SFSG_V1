@@ -205,7 +205,7 @@ def train_model(df):
 # ---------------------------
 def main():
    
-    st.set_page_config(page_title = "SFSG AI Tool", initial_sidebar_state='expanded', layout="wide")
+    st.set_page_config(page_title = "SFSG AI Tool", layout="wide")
     st.markdown("""
     <style>
         [data-testid=stSidebar] {

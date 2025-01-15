@@ -330,18 +330,19 @@ def main():
                 prepared_data = prepare_data(df)
                 st.subheader("Click the below button to train the AI Model with the uploaded dataset")
                 if st.button("Click here to Train Model", type ="primary"):
-                  train_model(prepared_data) 
+                  train_model(prepared_data)
+                if st.button ("Click here to Calculate M:F Ratio for the uploaded dataset", type ="primary"):
+                    df_with_ratio = calculate_mf_ratio(df)
+                    st.write("### Dataset with M:F Ratio")
+                    st.write(df_with_ratio.head())
+                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio")     
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter the Sample ID here")
                 if sample_id:
                    assess_sample(prepared_data,sample_id)
                 
                 #st.subheader("Calculate M:F Ratio")
-                if st.button ("Click here to Calculate M:F Ratio for the uploaded dataset", type ="primary"):
-                    df_with_ratio = calculate_mf_ratio(df)
-                    st.write("### Dataset with M:F Ratio")
-                    st.write(df_with_ratio.head())
-                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio") 
+               
                 
           
                   

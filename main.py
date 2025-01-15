@@ -327,12 +327,12 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
+                prepared_data = prepare_data(df)
                 st.subheader("Click the below button to train the AI Model with the uploaded dataset")
                 if st.button("Click here to Train Model", type ="primary"):
                   train_model(prepared_data) 
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter the Sample ID here")
-                prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)
                 

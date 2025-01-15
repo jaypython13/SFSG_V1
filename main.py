@@ -42,18 +42,38 @@ def save_csv(df, file_path):
     st.success(f"Data saved to {file_path}")
 
 
+#def load_csv(file_path):
+    #Loads a CSV file and handles errors."""
+    #try:
+        #df = pd.read_csv(file_path)
+        #st.write("Dataset loaded successfully:")
+        #st.write(df.head())
+        #return df
+    #except FileNotFoundError:
+        #st.error(f"Error: '{file_path}' not found.")
+    #except Exception as e:
+        #st.error(f"An unexpected error occurred: {e}")"""
+        
 def load_csv(file_path):
     """Loads a CSV file and handles errors."""
     try:
         df = pd.read_csv(file_path)
         st.write("Dataset loaded successfully:")
         st.write(df.head())
+
+        # Validate Quantity column
+        if 'Quantity' in df.columns:
+            non_numeric_rows = df[pd.to_numeric(df['Quantity'], errors='coerce').isnull()]
+            if not non_numeric_rows.empty:
+                st.error("The 'Quantity' column contains non-numeric values. Please fix these rows:")
+                st.write(non_numeric_rows)
+                st.stop()
+
         return df
     except FileNotFoundError:
         st.error(f"Error: '{file_path}' not found.")
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
-
 def check_columns(df, required_columns):
     """Ensures required columns exist in the DataFrame."""
     missing_columns = [col for col in required_columns if col not in df.columns]

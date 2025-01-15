@@ -327,16 +327,15 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
-                 
-                
+                st.subheader("Click the below button to train the AI Model with the uploaded dataset")
+                if st.button("Click here to Train Model", type ="primary"):
+                  train_model(prepared_data) 
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter the Sample ID here")
                 prepared_data = prepare_data(df)
                 if sample_id:
                    assess_sample(prepared_data,sample_id)
-                st.subheader("Click the below button to train the AI Model with the uploaded dataset")
-                if st.button("Train Model"):
-                  train_model(prepared_data)
+                
                 st.subheader("Calculate M:F Ratio")
                 if st.button ("Calculate M:F Ratio for the uploaded dataset", type ="primary"):
                     df_with_ratio = calculate_mf_ratio(df)

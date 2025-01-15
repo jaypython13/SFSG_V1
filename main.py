@@ -89,6 +89,9 @@ def classify_degradation(index):
         return "Degraded"
     else:
         return "Significant Degradation"
+
+
+
 def prepare_data(df):
     """Prepare dataset by cleaning and calculating the degradation index."""
     df.columns = df.columns.str.strip()

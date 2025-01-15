@@ -92,11 +92,33 @@ def assess_sample(df, sample_id):
             st.warning("##### AI Assesement : The sample is degraded. No action needed.")
         else:
             st.error("##### AI Assesement : The sample is significantly degraded. Resample is required.")
+def train_model(df):
+    """Train and evaluate a RandomForestClassifier."""
+    df['Degradation_Status'] = df['Degradation_Index'].apply(classify_degradation)
+    status_mapping = {"Ready": 0, "Degraded": 1, "Significant Degradation": 2}
+    df['Degradation_Status'] = df['Degradation_Status'].map(status_mapping)
 
+    X = df[['Quantity_Autosom_1', 'Quantity_Autosom_2', 'Degradation_Index']]
+    y = df['Degradation_Status']
+
+    if X.isnull().values.any() or np.isinf(X.values).any():
+        st.error("Input data contains null or infinite values. Please ensure the dataset is clean before training.")
+        return
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    model = RandomForestClassifier(random_state=42)
+    model.fit(X_train, y_train)
+
+    y_pred = model.predict(X_test)
+
+    st.write("### Model Evaluation")
+    st.text(classification_report(y_test, y_pred))
+    st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
 # ---------------------------
 # Machine Learning Model
 # ---------------------------
-def train_model(df):
+'''def train_model(df):
     """Train and evaluate a RandomForestClassifier."""
     df['Degradation_Status'] = df['Degradation_Index'].apply(classify_degradation)
     status_mapping = {"Ready": 0, "Degraded": 1, "Significant Degradation": 2}
@@ -114,7 +136,7 @@ def train_model(df):
 
     st.write("### Model Evaluation")
     st.text(classification_report(y_test, y_pred))
-    st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
+    st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")'''
 # ---------------------------
 # Streamlit App Layout
 # ---------------------------

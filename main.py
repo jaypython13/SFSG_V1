@@ -90,7 +90,8 @@ def download_button(df, filename, label):
         label=label,
         data=csv,
         file_name=filename,
-        mime='text/csv'
+        mime='text/csv',
+        type= "primary"
     )
 
 def save_csv(df, file_path):
@@ -341,7 +342,7 @@ def main():
                     df_with_ratio = calculate_mf_ratio(df)
                     st.write("### Dataset with M:F Ratio")
                     st.write(df_with_ratio.head())
-                    st.download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio", type = "primary") 
+                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio") 
                 
           
                   

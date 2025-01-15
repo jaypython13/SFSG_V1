@@ -35,7 +35,6 @@ def load_csv(file_path):
                 st.error("The 'Quantity' column contains non-numeric values. Please fix these rows:")
                 st.write(non_numeric_rows)
                 st.stop()
-
         return df
     except FileNotFoundError:
         st.error(f"Error: '{file_path}' not found.")
@@ -77,9 +76,9 @@ def calculate_mf_ratio(df):
     merged_data['M:F_Ratio'] = numerator.fillna(0).astype(int).astype(str) + " : " + denominator.fillna(0).round(2).astype(str)
 
     # Display the output
-    #print(merged_data[['Sample_ID', 'M:F_Ratio']])
+    print(merged_data[['Sample_ID', 'M:F_Ratio']])
     final_data = merged_data[['Sample_ID', 'M:F_Ratio']]
-    # Optional: Save the result to a CSV file
+    # Save the result to a CSV file
     final_data.to_csv('output_with_MF_Ratio.csv', index=False)
     #df['M:F Ratio'] = df['Quantity'] / (df['Quantity'].mean())
     return final_data

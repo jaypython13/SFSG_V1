@@ -344,7 +344,7 @@ def main():
                 if st.button ("Calculate M:F Ratio for the uploaded dataset"):
                     st.write("### Dataset with M:F Ratio")
                     st.write(df_with_ratio.head())
-                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio")  
+                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio", type ="primary")  
                   
 
 

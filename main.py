@@ -341,7 +341,7 @@ def main():
                     df_with_ratio = calculate_mf_ratio(df)
                     st.write("### Dataset with M:F Ratio")
                     st.write(df_with_ratio.head())
-                    download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio", type = "secondary") 
+                    st.download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio", type = "primary") 
                 
           
                   

@@ -18,6 +18,27 @@ from streamlit_option_menu import option_menu
 # ---------------------------
 # Utility Functions
 # ---------------------------
+def calculate_mf_ratio(df):
+    """Calculates the M:F ratio for the dataset."""
+    df['M:F Ratio'] = df['Quantity'] / (df['Quantity'].mean())
+    return df
+
+def download_button(df, filename, label):
+    """Creates a download button for a DataFrame."""
+    csv = df.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label=label,
+        data=csv,
+        file_name=filename,
+        mime='text/csv'
+    )
+
+def save_csv(df, file_path):
+    """Saves a DataFrame to a CSV file."""
+    df.to_csv(file_path, index=False)
+    st.success(f"Data saved to {file_path}")
+
+
 def load_csv(file_path):
     """Loads a CSV file and handles errors."""
     try:
@@ -86,11 +107,11 @@ def prepare_data(df):
 # ---------------------------
 # Data Preparation
 # ---------------------------
-#def prepare_data(df):
-    #"""Prepare dataset by cleaning and calculating the degradation index."""
-    #df.columns = df.columns.str.strip()
+"""def prepare_data(df):
+    #Prepare dataset by cleaning and calculating the degradation index.
+    df.columns = df.columns.str.strip()
 
-    """required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
+    required_columns = ['Sample_ID', 'Target_Name', 'Quantity']
     check_columns(df, required_columns)
 
     autosom_1 = df[df['Target_Name'] == 'Autosom 1'][['Sample_ID', 'Quantity']].rename(columns={'Quantity': 'Quantity_Autosom_1'})
@@ -129,6 +150,11 @@ def assess_sample(df, sample_id):
             st.warning("##### AI Assesement : The sample is degraded. No action needed.")
         else:
             st.error("##### AI Assesement : The sample is significantly degraded. Resample is required.")
+            
+# ---------------------------
+# Machine Learning Model
+# ---------------------------
+
 def train_model(df):
     """Train and evaluate a RandomForestClassifier."""
     df['Degradation_Status'] = df['Degradation_Index'].apply(classify_degradation)
@@ -152,11 +178,9 @@ def train_model(df):
     st.write("### Model Evaluation")
     st.text(classification_report(y_test, y_pred))
     st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}")
-# ---------------------------
-# Machine Learning Model
-# ---------------------------
-### def train_model(df):
-    #"""Train and evaluate a RandomForestClassifier."""
+
+"""def train_model(df):
+    #Train and evaluate a RandomForestClassifier.
     #df['Degradation_Status'] = df['Degradation_Index'].apply(classify_degradation)
     #status_mapping = {"Ready": 0, "Degraded": 1, "Significant Degradation": 2}
    # df['Degradation_Status'] = df['Degradation_Status'].map(status_mapping)
@@ -173,7 +197,9 @@ def train_model(df):
 
     #st.write("### Model Evaluation")
     #st.text(classification_report(y_test, y_pred))
-   # st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}") 
+   # st.write(f"Accuracy: {accuracy_score(y_test, y_pred):.2f}") """
+
+
 # ---------------------------
 # Streamlit App Layout
 # ---------------------------
@@ -236,6 +262,11 @@ def main():
                 df = pd.read_csv(uploaded_file)
                 st.write("### The Sample Data is uploaded Successfully")
                 st.write(df.head())
+                st.subheader("Calculate M:F Ratio")
+                df_with_ratio = calculate_mf_ratio(df)
+                st.write("### Dataset with M:F Ratio")
+                st.write(df_with_ratio.head())
+                download_button(df_with_ratio, "Dataset_with_MF_Ratio.csv", "Download Dataset with M:F Ratio")
                 st.subheader("🔍 Assess Sample")
                 sample_id = st.text_input(" ##### Enter the Sample ID here")
                 prepared_data = prepare_data(df)
